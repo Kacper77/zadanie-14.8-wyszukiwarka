@@ -1,3 +1,6 @@
+var GIPHY_API_URL = 'https: //api.giphy.com';
+var GIPHY_PUB_KEY = 'EPWxjiJOgJE8C9NfzJCH8ws7UOuBScgb';
+
 App = React.createClass({
     getInitialState() {
         return {
@@ -7,7 +10,6 @@ App = React.createClass({
         };
     },
 
-    /*<Search onSearch={this.handleSearch}/>*/
 
     handleSearch: function(searchingText) { // 1.
         this.setState({
@@ -50,11 +52,11 @@ App = React.createClass({
             <div style={styles}>
                 <h1>Wyszukiwarka GIFów!</h1>
                 <p>Znajdź gifa na <a href='http://giphy.com'>giphy</a>. Naciskaj enter, aby pobrać kolejne gify.</p>
-                <Search />
-            <Gif
-                loading={this.state.loading}
-                url={this.state.gif.url}
-                sourceUrl={this.state.gif.sourceUrl}
+                <Search onSearch={this.handleSearch}/>
+            	<Gif
+                	loading={this.state.loading}
+                	url={this.state.gif.url}
+                	sourceUrl={this.state.gif.sourceUrl}
                 />
             </div>
         );
